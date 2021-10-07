@@ -3,7 +3,7 @@ name: ingress-nginx
 description: NGINX Ingress Controller component for Karavel
 type: application
 version: 0.1.0-SNAPSHOT
-appVersion: 1.0.3
+appVersion: 0.49.3
 maintainers:
   - name: MatteoJoliveau
     email: matteo.joliveau@mikamai.com
