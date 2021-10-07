@@ -17,10 +17,12 @@ spec:
       port: 80
       protocol: TCP
       targetPort: http
+      appProtocol: http
     - name: https
       port: 443
       protocol: TCP
       targetPort: https
+      appProtocol: https
   selector:
     app.kubernetes.io/name: {{ include "ingress-nginx.name" . }}-controller
     {{- include "ingress-nginx.selectorLabels" . | nindent 4 }}
