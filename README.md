@@ -2,7 +2,7 @@
 
 ![Component version](https://img.shields.io/badge/dynamic/yaml?color=blue&label=component+version&query=$.entries.ingress-nginx[0].version&url=https%3A%2F%2Frepository.platform.karavel.io%2Funstable%2Findex.yaml&style=for-the-badge)
 [![NGINX Ingress Controller version](https://img.shields.io/badge/dynamic/yaml?color=blue&label=ingress-nginx+version&query=$.entries.ingress-nginx[0].appVersion&url=https%3A%2F%2Frepository.platform.karavel.io%2Funstable%2Findex.yaml&style=for-the-badge)](https://kubernetes.github.io/ingress-nginx)
-[Documentation](https://docs.karavel.io/components/ingress-nginx)
+[Documentation](https://platform.karavel.io/components/ingress-nginx)
 
 ## Overview
 
