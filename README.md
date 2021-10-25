@@ -12,4 +12,4 @@ ingress-nginx is an Ingress controller for Kubernetes using NGINX as a reverse p
 
 The NGINX Ingress Controller Component is licensed under the [Apache 2.0 license](LICENSE).
 
-The Karavel Container Platform is licensed under the [Apache 2.0 license](https://github.com/projectkaravel/platform/blob/main/LICENSE).
+The Karavel Container Platform is licensed under the [Apache 2.0 license](https://github.com/karavel-io/platform/blob/main/LICENSE).

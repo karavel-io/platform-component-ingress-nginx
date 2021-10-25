@@ -1,7 +1,7 @@
 site_name: components/ingress-nginx
 site_url: https://docs.karavel.io/components/ingress-nginx
-repo_name: projectkaravel/platform-component-ingress-nginx
-repo_url: https://github.com/projectkaravel/platform-component-ingress-nginx
+repo_name: karavel-io/platform-component-ingress-nginx
+repo_url: https://github.com/karavel-io/platform-component-ingress-nginx
 copyright: © 2021 The Karavel Project | Documentation distributed under CC BY SA 4.0
 strict: false
 theme:
