@@ -6,6 +6,6 @@ component "ingress-nginx" {
 
   # Params default values
 
-  hello = "world"
+  defaultIngress = true # optional, set to false if you want another ingress as default
 }
 ```
