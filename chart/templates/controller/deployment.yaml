@@ -133,4 +133,4 @@ spec:
       volumes:
         - name: webhook-cert
           secret:
-            secretname: {{ include "ingress-nginx.name" . }}-admission
+            secretName: {{ include "ingress-nginx.name" . }}-admission
