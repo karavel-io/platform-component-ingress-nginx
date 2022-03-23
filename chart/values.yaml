@@ -4,3 +4,6 @@ grafana:
   enable: false
 
 defaultIngress: true
+
+webhook:
+  version: 1.1
