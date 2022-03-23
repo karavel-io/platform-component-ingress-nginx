@@ -1,7 +1,7 @@
 apiVersion: policy/v1beta1
 kind: PodDisruptionBudget
 metadata:
-  name: default-backend
+  name: {{ include "ingress-nginx.name" . }}-default-backend
   namespace: {{ .Release.Namespace }}
   labels:
     app.kubernetes.io/name: default-backend
