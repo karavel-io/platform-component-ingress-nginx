@@ -9,6 +9,8 @@ metadata:
     app.kubernetes.io/name: {{ include "ingress-nginx.name" . }}-admission
     {{- include "ingress-nginx.labels" . | nindent 4 }}
     app.kubernetes.io/component: admission-webhook
+  annotations:
+    cert-manager.io/inject-ca-from: {{ .Release.Namespace }}/{{ include "ingress-nginx.name" . }}-webhook-cert
 webhooks:
   - name: validate.nginx.ingress.kubernetes.io
     matchPolicy: Equivalent

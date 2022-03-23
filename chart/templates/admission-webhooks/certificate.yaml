@@ -1,0 +1,22 @@
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  name: {{ include "ingress-nginx.name" . }}-webhook-selfsigned-issuer
+  namespace: {{ .Release.Namespace }}
+spec:
+  selfSigned: {}
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: {{ include "ingress-nginx.name" . }}-webhook-cert
+  namespace: {{ .Release.Namespace }}
+spec:
+  dnsNames:
+    - {{ include "ingress-nginx.name" . }}-controller-admission
+    - {{ include "ingress-nginx.name" . }}-controller-admission.{{ .Release.Namespace }}.svc
+    - {{ include "ingress-nginx.name" . }}-controller-admission.{{ .Release.Namespace }}.svc.cluster.local
+  issuerRef:
+    kind: Issuer
+    name: {{ include "ingress-nginx.name" . }}-webhook-selfsigned-issuer
+  secretName: {{ include "ingress-nginx.name" . }}-webhook-cert
