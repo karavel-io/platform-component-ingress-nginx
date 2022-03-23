@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: default-backend
+  name: {{ include "ingress-nginx.name" . }}-default-backend
   namespace: {{ .Release.Namespace }}
   labels:
     app.kubernetes.io/name: default-backend
@@ -67,5 +67,5 @@ spec:
             requests:
               cpu: 10m
               memory: 20Mi
-      serviceAccountName: default-backend
+      automountServiceAccountToken: false
       terminationGracePeriodSeconds: 60

@@ -40,13 +40,13 @@ spec:
                   - /wait-shutdown
           args:
             - /nginx-ingress-controller
-            - --default-backend-service=$(POD_NAMESPACE)/default-backend
-            - --publish-service=$(POD_NAMESPACE)/ingress-nginx-controller
+            - --default-backend-service=$(POD_NAMESPACE)/{{ include "ingress-nginx.name" . }}-default-backend
+            - --publish-service=$(POD_NAMESPACE)/{{ include "ingress-nginx.name" . }}-controller
             - --election-id=ingress-controller-leader
             - --ingress-class=nginx
-            - --configmap=$(POD_NAMESPACE)/ingress-nginx-controller
-            - --tcp-services-configmap=$(POD_NAMESPACE)/ingress-nginx-tcp
-            - --udp-services-configmap=$(POD_NAMESPACE)/ingress-nginx-udp
+            - --configmap=$(POD_NAMESPACE)/{{ include "ingress-nginx.name" . }}-controller
+            - --tcp-services-configmap=$(POD_NAMESPACE)/{{ include "ingress-nginx.name" . }}-tcp
+            - --udp-services-configmap=$(POD_NAMESPACE)/{{ include "ingress-nginx.name" . }}-udp
             - --validating-webhook=:8443
             - --validating-webhook-certificate=/usr/local/certificates/cert
             - --validating-webhook-key=/usr/local/certificates/key
@@ -133,4 +133,4 @@ spec:
       volumes:
         - name: webhook-cert
           secret:
-            secretName: ingress-nginx-admission
+            secretname: {{ include "ingress-nginx.name" . }}-admission

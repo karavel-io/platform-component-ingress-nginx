@@ -8,5 +8,5 @@ metadata:
     {{- include "ingress-nginx.labels" . | nindent 4 }}
     app.kubernetes.io/component: controller
 data:
-  add-headers: {{ .Release.Namespace }}/ingress-nginx-custom-add-headers
-  proxy-set-headers: {{ .Release.Namespace }}/ingress-nginx-custom-proxy-headers
+  add-headers: {{ .Release.Namespace }}/{{ include "ingress-nginx.name" . }}-custom-add-headers
+  proxy-set-headers: {{ .Release.Namespace }}/{{ include "ingress-nginx.name" . }}-custom-proxy-headers
