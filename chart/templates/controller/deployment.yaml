@@ -52,6 +52,9 @@ spec:
             - --validating-webhook-key=/usr/local/certificates/tls.key
             - --health-check-path=/healthz
             - --enable-ssl-passthrough
+            {{- if .Values.defaultIngress }}
+            - --watch-ingress-without-class
+            {{- end }}
           securityContext:
             capabilities:
                 drop:
