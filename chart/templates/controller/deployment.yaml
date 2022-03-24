@@ -48,8 +48,8 @@ spec:
             - --tcp-services-configmap=$(POD_NAMESPACE)/{{ include "ingress-nginx.name" . }}-tcp
             - --udp-services-configmap=$(POD_NAMESPACE)/{{ include "ingress-nginx.name" . }}-udp
             - --validating-webhook=:8443
-            - --validating-webhook-certificate=/usr/local/certificates/cert
-            - --validating-webhook-key=/usr/local/certificates/key
+            - --validating-webhook-certificate=/usr/local/certificates/tls.crt
+            - --validating-webhook-key=/usr/local/certificates/tls.key
             - --health-check-path=/healthz
             - --enable-ssl-passthrough
           securityContext:
@@ -133,4 +133,5 @@ spec:
       volumes:
         - name: webhook-cert
           secret:
-            secretName: {{ include "ingress-nginx.name" . }}-admission
+            secretName: {{ include "ingress-nginx.name" . }}-webhook-cert
+
