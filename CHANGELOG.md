@@ -11,7 +11,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Update pods resource quotas after production testing and fine-tuning to improve efficiency
 - Added `namespace: ingress-nginx` to [values.yaml](chart/values.yaml) as required by [Karavel CLI 0.4](https://github.com/karavel-io/cli/releases/tag/v0.4.0)
 - Updated to [v1.2.1](https://github.com/kubernetes/ingress-nginx/releases/tag/controller-v1.2.1)
 
